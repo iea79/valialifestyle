@@ -1,0 +1,99 @@
+.fScreen {
+    background: url("../img/f-bg-mob.jpg") center no-repeat;
+    background-size: cover;
+    padding: 12.8em 0 3.1em;
+    position: relative;
+    text-align: center;
+
+    @media (min-width: 768px) {
+        background: url("../img/f-bg.jpg") center no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        text-align: left;
+        padding: 15.5em 0 4.5em;
+    }
+
+    .section {
+        &__title {
+            color: #ffffff;
+            font-size: 2.9em;
+            font-weight: 700;
+            line-height: 1.21;
+            margin-bottom: 1.8em;
+
+            @media (min-width: 768px) {
+                max-width: 9em;
+                text-align: left;
+                font-size: 4.563em;
+                margin-bottom: 1.3em;
+            }
+        }
+
+    }
+
+    &__sub {
+        font-size: 0.9em;
+        font-weight: 700;
+        letter-spacing: 0.27em;
+        text-transform: uppercase;
+        color: #fff9f9;
+        margin-bottom: 7.8em;
+
+        @media (min-width: 768px) {
+            font-size: 1.25em;
+            margin-bottom: 1.6em;
+        }
+    }
+
+    &__soc {
+        position: relative;
+        z-index: 1;
+        display: inline-flex;
+    }
+
+    &__scroll {
+        text-align: center;
+        margin-top: 10em;
+
+        @media (min-width: 768px) {
+            margin-top: 0;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 3.4em;
+        }
+
+        .icon_scroll {
+            font-size: 3.4em;
+            color: $color_withe;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: color 0.3s;
+            text-decoration: none;
+
+            &:hover {
+                color: #FBBDAA;
+            }
+
+            @media (min-width: 768px) {
+                animation: scrollAnim infinite 2.4s;
+            }
+        }
+    }
+
+}
+
+@keyframes scrollAnim {
+    from {
+        top: 0;
+    }
+
+    50% {
+        top: 0.1em;
+    }
+
+    to {
+        top: 0;
+    }
+}

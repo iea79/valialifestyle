@@ -1,0 +1,109 @@
+@import "variables";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?xrux80') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?xrux80') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?xrux80##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon_"], [class*=" icon_"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon_zoom {
+  &:before {
+    content: $icon_zoom; 
+  }
+}
+.icon_arrow {
+  &:before {
+    content: $icon_arrow; 
+  }
+}
+.icon_scroll {
+  &:before {
+    content: $icon_scroll; 
+  }
+}
+.icon_next {
+  &:before {
+    content: $icon_next; 
+  }
+}
+.icon_prev {
+  &:before {
+    content: $icon_prev; 
+  }
+}
+.icon_up {
+  &:before {
+    content: $icon_up; 
+  }
+}
+.icon_down {
+  &:before {
+    content: $icon_down; 
+  }
+}
+.icon_place {
+  &:before {
+    content: $icon_place; 
+  }
+}
+.icon_email {
+  &:before {
+    content: $icon_email; 
+  }
+}
+.icon_phone {
+  &:before {
+    content: $icon_phone; 
+  }
+}
+.icon_plus {
+  &:before {
+    content: $icon_plus; 
+  }
+}
+.icon_insta {
+  &:before {
+    content: $icon_insta; 
+  }
+}
+.icon_mail {
+  &:before {
+    content: $icon_mail; 
+  }
+}
+.icon_twiter {
+  &:before {
+    content: $icon_twiter; 
+  }
+}
+.icon_youtube {
+  &:before {
+    content: $icon_youtube; 
+  }
+}
+.icon_fb {
+  &:before {
+    content: $icon_fb; 
+  }
+}
+

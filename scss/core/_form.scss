@@ -2,7 +2,7 @@
 	@extend %clear_a;
 
 	&__row {
-		margin-bottom: 15px;
+		margin-bottom: 2em;
 		@extend %clear_a;
 
 		.btn,
@@ -22,12 +22,15 @@
 		textarea {
 			max-width: 100%;
 			max-width: 100%;
-			min-height: 15px;
+			min-height: 5em;
+		}
+
+		.btn {
+			padding: 0.4em;
 		}
 	}
 
-	&__label {
-		}
+	&__label {}
 }
 // Input text and textarea ================================================
 input:not([type]),
@@ -40,29 +43,33 @@ input[type=tel],
 input[type=text],
 input[type=url],
 textarea {
-	background-color: $input_bg_color;
-	border: 1px solid $input_border_color;
-	padding: 6px 15px;
+	padding: 0.5em;
 	outline: none;
-	font-size: 16px;
+	text-align: center;
+	font-size: 1.75em;
 	font-weight: 300;
 	font-family: $main_font_family;
-	border-radius: 5px;
-	transition: all 0.3s;
+	color: $main_color;
+	// letter-spacing: 0.106em;
+	border: 0.063em solid #d2d2d2;
+	background-color: #ffffff;
+	border-radius: 0;
+	transition: 0.3s;
+	transition-property: background, border;
 
 	&:hover {
-		border: 1px solid $input_hover_border_color;
+		border: 0.063em solid $input_hover_border_color;
 		background-color: $input_hover_bg_color;
 	}
 
 	&:focus {
-		border: 1px solid $input_focus_border_color;
+		border: 0.063em solid $input_focus_border_color;
 		background-color: $input_focus_bg_color;
 	}
 
 	&.invalid {
 		background-color: #fff0f0;
-		border: 1px solid red;
+		border: 0.063em solid red;
 	}
 	// Placeholder for input +++++++++++++++
 	@include placeholder {

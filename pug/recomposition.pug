@@ -1,0 +1,77 @@
+extends layout.pug
+block variables
+    -var pageClass = "";
+
+block content
+    .page
+        .page__top(style="background-image: url(img/recomposition-bg.jpg)")
+            .container_center
+                h1.page__title Body Recomposition Program
+        .page__descr
+            .container_center
+                h2.page__descrTitle Our medical weight loss program delivers results with strategies focusing on the whole person. 
+                .page__descrSub.page__descrSub_lg We're different because we're medically supervised by an Obesity Medicine Board Certified Specialist, offering one on one coaching with Strength & Conditioning Specialists and a custom program based on the science of fitness, nutrition and mind-body medicine. 
+
+    // begin price
+    .price
+        .container_center
+            .price__title Choose the program level that suits you best!
+
+            .price__list
+                div
+                    .price__item
+                        .price__level Level 1
+                        .price__descr
+                            ul
+                                li Medical Consultation
+                                li 1 on 1 Fitness Training
+                                li Nutrition Fundamentals Program
+                                li Body Compostion Analysis with RJL System
+                        .price__number 75$
+                        .price__action
+                            a.btn(href="#") Book Now
+                div
+                    .price__item
+                        .price__level Level 2
+                        .price__descr
+                            ul
+                                li Medical Consultation
+                                li 1 on 1 Fitness Training
+                                li Nutrition Fundamentals Program
+                                li Body Compostion Analysis with RJL System
+                            .price__plus
+                                .price__more
+                                    ul
+                                        li Performance + Nutrition Coaching bi-weekly
+                        .price__number 150$
+                        .price__action
+                            a.btn(href="#") Book Now
+                div
+                    .price__item
+                        .price__level Level 3
+                        .price__descr
+                            ul
+                                li Medical Consultation
+                                li 1 on 1 Fitness Training
+                                li Nutrition Fundamentals Program
+                                li Body Compostion Analysis with RJL System
+                                li Performance + Nutrition Coaching bi-weekly
+                            .price__plus
+                                .price__more
+                                    ul
+                                        li Access to all Training Classes
+                                        li Regeneration Services
+                                        li Monthly Vitamin Shots
+                        .price__number 225$
+                        .price__action
+                            a.btn(href="#") Book Now
+
+            .price__notif
+                p * Medical consultation may be covered by insurance; additional fees apply if out of network for the medical consultation. Program includes four medical apointments over a period of 3 months.
+                p ** Fitness training services provided by Valia Fitness. Package rates are separate from program fee depending on frequency of sessions. 
+
+
+
+    // end price
+
+    include articleList.pug

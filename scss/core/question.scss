@@ -1,0 +1,21 @@
+.question {
+    background: url("../img/pattern-2.jpg") center no-repeat;
+    background-size: cover;
+    padding: 4em 0;
+
+    @media (min-width: 768px) {
+        padding: 10.2em 0 3.4em;
+    }
+
+    .section__title {
+        margin-bottom: 0.6em;
+    }
+
+    .form {
+
+        @media (min-width: 768px) {
+            margin: 4.9em auto;
+            max-width: 33.1em;
+        }
+    }
+}

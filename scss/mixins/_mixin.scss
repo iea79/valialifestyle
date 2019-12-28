@@ -151,9 +151,12 @@
 	display: flex;
 	flex-wrap: wrap;
 
+	> a,
 	> div {
+		display: flex;
 		padding-left: $gup;
 		width: 100% / $size;
+		// margin-bottom: $gup / 2;
 	}
 }
 // Ширина колонок сетки при смене ширины окна

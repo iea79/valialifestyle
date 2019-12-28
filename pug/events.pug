@@ -1,0 +1,26 @@
+extends layout.pug
+block variables
+    -var pageClass = "";
+
+block content
+    .page
+        .page__top(style="background-image: url(img/events-bg.jpg)")
+            .container_center
+                h1.page__title Events
+
+    .events.container_center
+        .eventsList
+            each value, i in ['','','']
+                a(href="event.html").eventsList__item
+                    span.eventsList__img
+                        img(src="img/events-"+(i+1)+".jpg", alt="")
+                    span.eventsList__short
+                        span.eventsList__top
+                            span.eventsList__title Event Name
+                            span.eventsList__date 12.09.2019
+                        span.eventsList__text
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit id sit ipsum sit dui a, ultrices mauris. Quam nisi, id adipiscing amet purus vitae imperdiet velit porttitor. Ullamcorper nec semper et sed est interdum at nulla. Gravida ultrices pretium velit ipsum quis. Quam nisi, id adipiscing amet purus vitae imperdiet velit porttitor. Ullamcorper nec semper et sed est interdum at nulla. Gravida ultrices pretium velit ipsum quis. Gravida ultrices pretium velit ipsum quis... 
+                                span Read More
+
+        .eventsList__more
+            a.btn.btn_outline(href="#") View More

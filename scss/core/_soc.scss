@@ -1,22 +1,26 @@
 // Social link
+
 .soc {
-	float: left;
+	display: flex;
+	align-items: center;
+
 	a {
-		display: inline-block;
-		width: 30px;
-		height: 30px;
-		border-radius: 50%;
-		background-color: #000;
-		text-align: center;
+		// display: inline-block;
+		flex: none;
 		text-decoration: none;
-		@include trs(0.3s);
+		transition: color 0.3s;
+		color: $color_withe;
+
 		&:hover {
-			opacity: .8;
+			color: #FBBDAA;
 		}
-		&:before {
-			content: 'soc';
-			color: #fff;
-			text-decoration: none;
+
+		.fScreen & {
+			font-size: 1.8em;
+
+			&:not(:last-child) {
+				margin-right: 1.1em;
+			}
 		}
 	}
 }

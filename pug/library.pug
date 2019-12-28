@@ -1,0 +1,39 @@
+extends layout.pug
+block variables
+    -var pageClass = "";
+
+block content
+    .page
+        .page__top(style="background-image: url(img/library-bg.jpg)")
+            .container_center
+                h1.page__title Library
+
+    .container_center
+        .library
+            .libraryCategory
+                a.libraryCategory__item(href="library-categoryes.html")
+                    .libraryCategory__img
+                        img(src="img/library-1.jpg", alt="alt")
+                    .libraryCategory__name Fitness
+                    .libraryCategory__short Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                a.libraryCategory__item(href="library-categoryes.html")
+                    .libraryCategory__img
+                        img(src="img/library-2.jpg", alt="alt")
+                    .libraryCategory__name Nutrition
+                    .libraryCategory__short Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                a.libraryCategory__item(href="library-categoryes.html")
+                    .libraryCategory__img
+                        img(src="img/library-3.jpg", alt="alt")
+                    .libraryCategory__name Mind-Body Medicine
+                    .libraryCategory__short Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+        .medicalDisambler
+            .medicalDisambler__title Medical Advice Disclaimer
+                i.icon_down
+            .medicalDisambler__text
+                p The content of this site is for informational purposes only. The content is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any question you may have regarding a medical condition. 
+
+                p If you think you may have a medical emergency, call your doctor or 911 immediately. Reliance on any information provided by Valia Lifestyle on this Site is solely at your own risk.
+
+
+    include articleList.pug

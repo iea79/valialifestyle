@@ -1,13 +1,123 @@
 /* Footer
  ----------------------------------------------------------------------------- */
 .footer {
-	font-size: $main_font_size;
-	position: relative;
-	// height: $footer_height;
-	background: #BFF08E;
-	// @extend %clear_all;
-	.container_center {
-		// padding-top: 10px;
-		// padding-bottom: 10px;
-	}
+    background: #212A31;
+    color: $color_withe;
+    padding: 4em 0 3em;
+
+    @media (min-width: 768px) {
+        padding: 4.3em 0 2.7em;
+    }
+
+    &__content {
+        max-width: 77.88em;
+        padding-left: 1.6em;
+        padding-right: 1.6em;
+        margin: auto;
+
+        @media (min-width: 768px) {
+            display: flex;
+            padding-left: 1.8em;
+            padding-right: 1.6em;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+    }
+
+    &__left {
+        text-align: center;
+
+        @media (min-width: 768px) {
+            padding-top: 0.5em;
+            width: 18.8%;
+            flex: none;
+            text-align: left;
+        }
+    }
+
+    &__copy {
+        margin-top: 1em;
+        line-height: 1.4;
+        font-size: 0.95em;
+
+        @media (max-width: 767px) {
+            text-align: center;
+        }
+    }
+
+    &__center {
+        @media (min-width: 768px) {
+            flex-grow: 1;
+            padding-left: 13.5em;
+            overflow: hidden;
+        }
+    }
+
+    &__right {
+        @media (min-width: 768px) {
+            width: 15%;
+            flex: none;
+        }
+    }
+
+    .navbar {
+        padding: 0;
+
+        @media (min-width: 768px) {
+            column-count: 2;
+            column-width: 9em;
+            column-gap: 8.2em;
+            max-height: 9.6em;
+        }
+
+        @media (max-width: 767px) {
+            text-align: center;
+        }
+
+        &__item {
+            margin-bottom: 1.6em;
+            display: block;
+            margin-left: 0;
+        }
+
+        &__link {
+            @media (min-width: 768px) {
+                &:after {
+                    margin-bottom: 0.2em;
+                }
+            }
+
+            i {
+                display: inline-block;
+                margin-top: -0.2em;
+                // font-size: 1.5em;
+            }
+        }
+
+    }
+
+    .soc {
+        display: flex;
+        justify-content: space-around;
+        margin: 3em auto;
+        width: 100%;
+        max-width: 16em;
+
+        @media (min-width: 768px) {
+            justify-content: flex-end;
+            // display: flex;
+            flex-wrap: wrap;
+            margin: 0;
+            max-width: none;
+        }
+
+        a {
+            font-size: 1.7em;
+
+            @media (min-width: 768px) {
+                margin-left: 1.2em;
+                margin-bottom: 1em;
+            }
+        }
+    }
 }

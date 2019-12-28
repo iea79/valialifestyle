@@ -4,19 +4,124 @@
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	display: flex;
+	position: relative;
+
+	.header & {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+
+		@media (min-width: 768px) {
+			flex-direction: row;
+		}
+	}
 
 	&__item {
 		// display: inline-block;
-		margin: 5px;
+		// margin: 5px;
+		margin-bottom: 1.4em;
+		// position: relative;
+
+		@media (min-width: 768px) {
+			margin-left: 4em;
+			margin-bottom: 0;
+		}
+
+		&:not(:last-child) {
+			a {
+				&:hover {
+					&:after {
+						// width: 100%;
+					}
+				}
+			}
+		}
 	}
 
-	&__link {}
+	&__sub {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		position: absolute;
+		background-color: $main_color;
+		padding: 1.7em 0 0.5em;
+		display: none;
+		// transform: translateY(-1em);
+		// text-rendering: transform 0.3s;
+
+		.home .header:not(.stiky) & {
+			background-color: transparent;
+		}
+
+		> li {
+			a {
+				color: $color_withe;
+				text-decoration: none;
+				font-size: 1em;
+				font-weight: 600;
+				text-transform: uppercase;
+				padding: 0.7em 1em;
+				display: inline-block;
+
+				.home .header:not(.stiky) & {
+					padding: 0.7em 0;
+				}
+
+				&:hover {
+					color: #FBBDAA;
+					// transform: translateY(0);
+				}
+			}
+		}
+
+		.navbar__item:hover & {
+			display: block;
+
+			@media (min-width: 768px) {
+				animation: showSub 0.3s;
+			}
+		}
+	}
+
+	&__link {
+		// color: $main_color;
+		color: $color_withe;
+		text-decoration: none;
+		font-size: 1.4em;
+		font-weight: 600;
+		text-transform: uppercase;
+		display: inline-block;
+
+		&:after {
+			content: '';
+			display: block;
+			border-top: 0.06em solid;
+			width: 0;
+			transition: width 0.3s;
+		}
+
+		@media (min-width: 768px) {
+			font-size: 1em;
+		}
+
+		i {
+			font-size: 1.7em;
+
+			@media (min-width: 768px) {
+				font-size: 2em;
+			}
+		}
+
+		&.active,
+		&:hover {
+			color: #FBBDAA;
+		}
+	}
 
 	&__toggle {
 		@media (max-width: 767px) {
 			position: absolute;
-			color: #00aed4;
+			color: $color_withe;
 			border-top: 0.2em solid;
 			border-bottom: 0.2em solid;
 			left: 1.3em;
@@ -32,7 +137,7 @@
 				content: '';
 				position: absolute;
 				border-top: 0.2em solid;
-				width: 100%;
+				width: 118%;
 				left: 0;
 				top: 50%;
 				margin-top: -0.1em;
@@ -40,8 +145,15 @@
 			}
 
 			&.active {
+				color: $color_withe;
 				border-top-color: transparent;
 				border-bottom-color: transparent;
+				left: 1em;
+
+				&:after,
+				&:before {
+					width: 100%;
+				}
 
 				&:before {
 					transform: rotate(45deg);
@@ -65,16 +177,28 @@
 		left: -300px;
 		top: 0;
 		bottom: 0;
-		background-color: $color_withe;
+		background: #333333;
 		width: 300px;
 		z-index: 10;
 		overflow: hidden;
-		padding: 5em 1em 2em;
+		padding: 6em 1em 2em;
 		transition: left 0.3s;
 		box-shadow: 0 0 1em rgba(#000, .1);
 
 		&.open {
 			left: 0;
 		}
+	}
+}
+
+@keyframes showSub {
+	from {
+		opacity: 0;
+		transform: translateY(1em);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }

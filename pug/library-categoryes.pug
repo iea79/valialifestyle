@@ -1,0 +1,29 @@
+extends layout.pug
+block variables
+    -var pageClass = "";
+
+block content
+    .page
+        .page__top(style="background-image: url(img/library-bg.jpg)")
+            .container_center
+                h1.page__title Library
+
+    .container_center
+        .libraryTabs
+            a.libraryTabs__item.active(href="#") Fitness 
+            a.libraryTabs__item(href="#") Nutrition
+            a.libraryTabs__item(href="#") Mind-Body Medicine
+
+        .libraryPanes
+            a.libraryPanes__item(style="background-image: url(img/cat-1.jpg)" href="#")
+                span.libraryPanes__name Strength 
+            a.libraryPanes__item(style="background-image: url(img/cat-2.jpg)" href="#")
+                span.libraryPanes__name Conditioning 
+            a.libraryPanes__item(style="background-image: url(img/cat-3.jpg)" href="#")
+                span.libraryPanes__name Cardio 
+            a.libraryPanes__item(style="background-image: url(img/cat-4.jpg)" href="#")
+                span.libraryPanes__name Body Recomposition
+            a.libraryPanes__item(style="background-image: url(img/cat-5.jpg)" href="#")
+                span.libraryPanes__name Muscle and Joint Repair
+            a.libraryPanes__item(style="background-image: url(img/cat-6.jpg)" href="#")
+                span.libraryPanes__name Recovery 

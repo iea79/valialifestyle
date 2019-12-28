@@ -41,6 +41,53 @@ $(document).ready(function() {
 
     checkOnResize();
 
+    $('.reviews__slider').slick({
+        dots: true,
+        nextArrow: '<i class="icon_next" />',
+        prevArrow: '<i class="icon_prev" />',
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                }
+            }
+        ]
+    });
+
+    $('.holisticList__item').on('click', function() {
+        $(this).toggleClass('open');
+    });
+
+    $('.pageSlider__full').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.pageSlider__thumbs'
+    });
+    $('.pageSlider__thumbs').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: '.pageSlider__full',
+        arrows: false,
+        // dots: true,
+        // centerMode: true,
+        focusOnSelect: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                }
+            }
+        ]
+    });
+
+    $('.medicalDisambler__title').on('click', function(event) {
+        $('.medicalDisambler').toggleClass('open');
+    })
+
 });
 
 $(window).resize(function(event) {
@@ -53,12 +100,12 @@ $(window).resize(function(event) {
 });
 
 function checkOnResize() {
-    fontResize();
+    // fontResize();
 }
 
 // Stiky menu // Липкое меню. При прокрутке к элементу #header добавляется класс .stiky который и стилизуем
 function stikyMenu() {
-    let HeaderTop = $('header').offset().top + $('.home').innerHeight();
+    let HeaderTop = $('header').offset().top;
     let currentTop = $(window).scrollTop();
 
     setNavbarPosition();
@@ -72,31 +119,40 @@ function stikyMenu() {
 
         if( currentTop > HeaderTop ) {
             $('header').addClass('stiky');
+            if (!$('body').hasClass('home')) {
+                $('body').css('paddingTop', $('header').innerHeight());
+            }
         } else {
             $('header').removeClass('stiky');
+            if (!$('body').hasClass('home')) {
+                $('body').removeAttr('style');
+            }
         }
 
-        $('.navbar__link').each(function(index, el) {
-            let section = $(this).attr('href');
-
-            if ($('section').is(section)) {
-                let offset = $(section).offset().top;
-
-                if (offset <= currentTop && offset + $(section).innerHeight() > currentTop) {
-                    $(this).addClass('active');
-                } else {
-                    $(this).removeClass('active');
-                }
-            }
-        });
+        // $('.navbar__link').each(function(index, el) {
+        //     let section = $(this).attr('href');
+        //
+        //     if ($('section').is(section)) {
+        //         let offset = $(section).offset().top;
+        //
+        //         if (offset <= currentTop && offset + $(section).innerHeight() > currentTop) {
+        //             $(this).addClass('active');
+        //         } else {
+        //             $(this).removeClass('active');
+        //         }
+        //     }
+        // });
     }
 };
 
+stikyMenu();
+
 function openMobileNav() {
     $('.navbar__toggle').on('click', function() {
-        var wrapp = $('.header__bottom');
+        var wrapp = $('.nav');
 
         wrapp.toggleClass('open');
+        $(this).toggleClass('active');
     });
 };
 openMobileNav();
@@ -111,6 +167,7 @@ function srollToId() {
         return false;
     });
 }
+srollToId();
 
 function fontResize() {
     var windowWidth = $(window).width();
@@ -215,73 +272,73 @@ function uploadYoutubeVideo() {
 // })
 
 // Простая проверка форм на заполненность и отправка аяксом
-// function formSubmit() {
-//     $("[type=submit]").on('click', function (e){
-//         e.preventDefault();
-//         var form = $(this).closest('.form');
-//         var url = form.attr('action');
-//         var form_data = form.serialize();
-//         var field = form.find('[required]');
-//         // console.log(form_data);
+function formSubmit() {
+    $("[type=submit]").on('click', function (e){
+        e.preventDefault();
+        var form = $(this).closest('.form');
+        var url = form.attr('action');
+        var form_data = form.serialize();
+        var field = form.find('[required]');
+        // console.log(form_data);
 
-//         empty = 0;
+        empty = 0;
 
-//         field.each(function() {
-//             if ($(this).val() == "") {
-//                 $(this).addClass('invalid');
-//                 // return false;
-//                 empty++;
-//             } else {
-//                 $(this).removeClass('invalid');
-//                 $(this).addClass('valid');
-//             }
-//         });
+        field.each(function() {
+            if ($(this).val() == "") {
+                $(this).addClass('invalid');
+                // return false;
+                empty++;
+            } else {
+                $(this).removeClass('invalid');
+                $(this).addClass('valid');
+            }
+        });
 
-//         // console.log(empty);
+        // console.log(empty);
 
-//         if (empty > 0) {
-//             return false;
-//         } else {
-//             $.ajax({
-//                 url: url,
-//                 type: "POST",
-//                 dataType: "html",
-//                 data: form_data,
-//                 success: function (response) {
-//                     // $('#success').modal('show');
-//                     // console.log('success');
-//                     console.log(response);
-//                     // console.log(data);
-//                     // document.location.href = "success.html";
-//                 },
-//                 error: function (response) {
-//                     // $('#success').modal('show');
-//                     // console.log('error');
-//                     console.log(response);
-//                 }
-//             });
-//         }
+        if (empty > 0) {
+            return false;
+        } else {
+            $.ajax({
+                url: url,
+                type: "POST",
+                dataType: "html",
+                data: form_data,
+                success: function (response) {
+                    // $('#success').modal('show');
+                    // console.log('success');
+                    console.log(response);
+                    // console.log(data);
+                    // document.location.href = "success.html";
+                },
+                error: function (response) {
+                    // $('#success').modal('show');
+                    // console.log('error');
+                    console.log(response);
+                }
+            });
+        }
 
-//     });
+    });
 
-//     $('[required]').on('blur', function() {
-//         if ($(this).val() != '') {
-//             $(this).removeClass('invalid');
-//         }
-//     });
+    $('[required]').on('blur', function() {
+        if ($(this).val() != '') {
+            $(this).removeClass('invalid');
+        }
+    });
 
-//     $('.form__privacy input').on('change', function(event) {
-//         event.preventDefault();
-//         var btn = $(this).closest('.form').find('.btn');
-//         if ($(this).prop('checked')) {
-//             btn.removeAttr('disabled');
-//             // console.log('checked');
-//         } else {
-//             btn.attr('disabled', true);
-//         }
-//     });
-// }
-
+    $('.form__privacy input').on('change', function(event) {
+        event.preventDefault();
+        var btn = $(this).closest('.form').find('.btn');
+        if ($(this).prop('checked')) {
+            btn.removeAttr('disabled');
+            // console.log('checked');
+        } else {
+            btn.attr('disabled', true);
+        }
+    });
+}
+formSubmit();
 
 // Проверка на возможность ввода только русских букв, цифр, тире и пробелов
 // $('#u_l_name').on('keypress keyup', function () {

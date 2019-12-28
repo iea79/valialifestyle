@@ -1,0 +1,162 @@
+.reviews {
+    background: url("../img/review-bg.jpg") center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: $color_withe;
+    padding: 4em 0 2em;
+
+    @media (min-width: 768px) {
+        padding: 6em 0 5em;
+    }
+
+    .section {
+        &__title {}
+
+    }
+
+    &__slider {
+        color: #212a31;
+        margin-top: 4em;
+
+        @media (min-width: 768px) {
+            margin-top: 3.8em;
+            padding: 0 6.7em;
+        }
+
+    }
+
+    &__slide {
+        border-radius: 0.438em;
+        background-color: #ffffff;
+        padding: 3em 2em 2.9em;
+
+        @media (min-width: 768px) {
+            padding: 4.3em 3.4em 2.9em;
+            display: flex !important;
+        }
+    }
+
+    &__left {
+        text-align: center;
+
+        @media (min-width: 768px) {
+            flex: none;
+            margin-right: 3.3em;
+            width: 9.6em;
+        }
+    }
+
+    &__img {
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 1.2em;
+        width: 9.6em;
+        height: 9.6em;
+        display: inline-block;
+
+        img {
+            display: block;
+        }
+    }
+
+    &__name {
+        color: #84c1c1;
+        font-size: 1.25em;
+        font-weight: 700;
+        margin-bottom: 1em;
+
+        @media (min-width: 768px) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__text {
+        font-size: 1.5em;
+        font-weight: 300;
+        padding-top: 0.1em;
+        line-height: 1.35;
+
+        @media (min-width: 768px) {
+            font-size: 1.75em;
+        }
+
+        b {
+            color: #174255;
+            font-weight: 800;
+            font-style: italic;
+        }
+    }
+
+    &__date {
+        margin-top: 0.9em;
+        font-size: 0.72em;
+        text-align: right;
+    }
+
+    .slick {
+        &-slide {
+            outline: 0;
+            margin: 0 0.1em;
+        }
+
+        &-list {}
+
+        &-current {}
+
+        &-arrow {
+            position: absolute;
+            background-color: transparent;
+            top: 50%;
+            margin-top: -1.4em;
+            cursor: pointer;
+            transition: color 0.3s;
+            z-index: 10;
+            color: $color_withe;
+            font-size: 3.6em;
+
+            &:hover {
+                color: #FBBDAA;
+            }
+
+            &.icon {
+                &_next {
+                    right: 0.5em;
+
+                }
+
+                &_prev {
+                    left: 0.5em;
+
+                }
+            }
+
+        }
+
+        &-dots {
+            list-style: none;
+            padding: 0;
+            margin: 1.4em 0;
+            text-align: center;
+
+            li {
+                width: 1em;
+                height: 1em;
+                border: 0.188em solid #ffffff;
+                border-radius: 50%;
+                display: inline-block;
+                margin: 0.8em;
+                cursor: pointer;
+
+                &.slick-active {
+                    background-color: $color_withe;
+                    cursor: default;
+                }
+
+                button {
+                    display: none;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,15 @@
+.logo {
+    max-width: 5.9em;
+    display: inline-block;
+
+    @media (min-width: 768px) {
+        max-width: 8.688em;
+    }
+
+    .footer & {
+        @media (max-width: 767px) {
+            max-width: 8em;
+            margin-bottom: 4em;
+        }
+    }
+}

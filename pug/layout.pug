@@ -1,0 +1,72 @@
+-var version = '1.3';
+block variables
+    -var pageClass = "";
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Valia lifestyle studio 
+
+        link(rel="stylesheet", type="text/css", href="css/style.css?"+version+"")
+    body(class= pageClass)
+        header.header
+            .header__content
+                .header__left
+                    a.logo(href="index.html")
+                        img(src="img/logo.svg", alt="alt")
+                .header__right
+                    .navbar__toggle
+                    nav.nav
+                        //- .navbar__toggle
+                        ul.navbar
+                            - var navbar = [{name: 'Services', anchor: 'service.html'},{name: 'About', anchor: '#'},{name: 'Events', anchor: 'events.html'},{name: 'Library', anchor: 'library.html'},{name: 'Contacts', anchor: ''},{name: '<i class="icon_zoom"></i>', anchor: ''}];
+                            each item in navbar
+                                if item.name == 'Services'
+                                    li.navbar__item
+                                        a(href= item.anchor).navbar__link !{item.name}
+                                        ul.navbar__sub
+                                            li
+                                                a(href="holistic.html") Holistic Health Performance
+                                            li
+                                                a(href="recomposition.html") Body Recomposition Program
+                                else if item.name == 'About'
+                                    li.navbar__item
+                                        a(href= item.anchor).navbar__link !{item.name}
+                                        ul.navbar__sub
+                                            li
+                                                a(href="mission.html") our Mission
+                                            li
+                                                a(href="team.html") our team
+                                else
+                                    li.navbar__item
+                                        a(href= item.anchor).navbar__link !{item.name}
+
+        main.main_content
+            block content
+
+        footer.footer
+            .footer__content
+                .footer__left
+                    a.logo(href="index.html")
+                        img(src="img/logo.svg", alt="")
+                    .footer__copy.desktop © 2019 Valia Lifestyle. <br>All Rights Reserved.
+                .footer__center
+                    ul.navbar
+                        - var navbar = [{name: 'Programs', anchor: ''},{name: 'About', anchor: ''},{name: 'Events', anchor: ''},{name: 'blog', anchor: ''},{name: 'Contacts', anchor: ''},{name: '<i class="icon_zoom"></i>', anchor: ''}];
+                        each item in navbar
+                            li.navbar__item
+                                a(href= item.anchor).navbar__link !{item.name}
+                .footer__right
+                    .soc
+                        a.icon_fb(href="#")
+                        a.icon_youtube(href="#")
+                        a.icon_twiter(href="#")
+                        a.icon_mail(href="#")
+
+                .footer__copy.mobile © 2019 Valia Lifestyle. <br>All Rights Reserved.
+
+        script(src="js/jquery.js")
+        script(src="js/slick.min.js")
+        script(src="js/function.js?"+version+"")

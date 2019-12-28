@@ -1,17 +1,46 @@
 /* Header
  ----------------------------------------------------------------------------- */
 .header {
-	background-color: #ccc;
-	padding: 10px 0;
-	@extend %clear_a;
+	// background-color: #ccc;
+	background: #212A31;
+	padding: 1.1em 0;
+	// @extend %clear_a;
+	transition: 0.3s;
+	transition-property: background, padding;
+
+	@media (min-width: 768px) {
+		padding: 1.1em 0 0.9em;
+	}
+
+	.home & {
+		&:not(.stiky) {
+			background-color: transparent;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			z-index: 10;
+
+			@media (min-width: 768px) {
+				padding: 2.3em 0;
+			}
+		}
+	}
 
 	&__content {
 		max-width: $container_width;
-		padding-left: 15px;
-		padding-right: 15px;
+		padding-left: 1.6em;
+		padding-right: 1.6em;
 		margin: auto;
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
+
+		@media (min-width: 768px) {
+			padding-left: 1em;
+			padding-right: 1em;
+			align-items: center;
+			justify-content: space-between;
+		}
 	}
 }
 
@@ -21,4 +50,5 @@
 	top: 0;
 	left: 0;
 	width: 100%;
+	z-index: 10;
 }

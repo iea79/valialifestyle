@@ -1,43 +1,78 @@
 // Style for button and pseudo button for input and link
+
 .btn {
-	color: $btn_default_text_color;
+	color: $color_withe;
 	font-family: $main_font_family;
-	font-size: 16px;
-	font-weight: 300;
-	padding: 5px 15px 7px;
+	font-size: 2em;
+	font-weight: 800;
+	padding: 0.7em 2em;
 	border: none;
 	outline: none;
 	text-decoration: none;
 	display: inline-block;
-	background-color: $btn_default_bg_color;
+	background-color: #212a31;
 	text-align: center;
 	max-width: 100%;
 	cursor: pointer;
-	border-radius: 5px;
-	transition: all 0.3s;
+	border-radius: 0;
+	transition: 0.3s;
+	transition-property: background, color, border;
 	text-decoration: none;
+
 	&:hover {
-		background-color: #fff;
-		color: #000;
+		background: #434343;
+		color: $color_withe;
 		text-decoration: none;
 	}
-	&:focus,&:active {
-		background-color: transparentize(#fff, .2);
-		color: #000;
+
+	&:active {
+		background-color: #212a31;
+		color: $color_withe;
 	}
-	@each $status_el, $color_bg in $el_colors {
-		&_#{$status_el} {
-			background-color: $color_bg;
-			border-color: $color_bg;
-			color: $btn_contrast_text_color;
-			&:hover {
-				background-color: darken($color_bg, 7%);
-				color: $btn_contrast_text_color;
-			}
-			&:focus,&:active {
-				background-color: darken($color_bg, 10%);
-				color: $btn_contrast_text_color;
-			}
+
+	&:disabled {
+		background: #E0E0E0;
+	}
+	// @each $status_el, $color_bg in $el_colors {
+	// 	&_#{$status_el} {
+	// 		background-color: $color_bg;
+	// 		border-color: $color_bg;
+	// 		color: $btn_contrast_text_color;
+	//
+	// 		&:hover {
+	// 			background-color: darken($color_bg, 7%);
+	// 			color: $btn_contrast_text_color;
+	// 		}
+	//
+	// 		&:active,
+	// 		&:focus {
+	// 			background-color: darken($color_bg, 10%);
+	// 			color: $btn_contrast_text_color;
+	// 		}
+	// 	}
+	// }
+	&_outline {
+		background-color: transparent;
+		color: #84C1C1;
+		border: 0.1em solid #84C1C1;
+		font-weight: 700;
+
+		&:hover {
+			background-color: transparent;
+			color: #77CBCB;
+			border: 0.1em solid #77CBCB;
 		}
-	}	
+
+		&:active {
+			background-color: transparent;
+			color: #84C1C1;
+			border: 0.1em solid #84C1C1;
+		}
+
+		&:disabled {
+			background-color: transparent;
+			color: #E0E0E0;
+			border: 0.1em solid #E0E0E0;
+		}
+	}
 }

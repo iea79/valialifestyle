@@ -1,0 +1,66 @@
+.why {
+    padding: 4em 0;
+    background: url("../img/pattern.jpg") 0 0 no-repeat;
+    background-size: cover;
+
+    @media (min-width: 768px) {
+        padding: 8.5em 0 7.5em;
+    }
+
+    .section {
+        &__title {}
+
+    }
+
+    &__content {
+        margin: 3.4em 0 0;
+        @media (min-width: 768px) {
+            display: flex;
+            margin: 6.4em 0 0;
+        }
+    }
+
+    &__text {
+
+        @media (min-width: 768px) {
+            padding-top: 3.1em;
+            padding-right: 7.5em;
+            order: 0;
+        }
+
+        h3 {
+            margin: 0 0 1.5em;
+            font-size: 1.8em;
+            font-weight: 600;
+            text-transform: capitalize;
+
+            @media (min-width: 768px) {
+                font-size: 2.3em;
+            }
+        }
+
+        p {
+            margin: 1.3em 0;
+            font-size: 1.3em;
+            font-weight: 300;
+            line-height: 1.4;
+
+            @media (min-width: 768px) {
+                font-size: 1.5em;
+            }
+        }
+    }
+
+    &__img {
+        margin-bottom: 2em;
+        text-align: center;
+
+        @media (min-width: 768px) {
+            flex: none;
+            order: 1;
+            width: 47.4%;
+            margin-bottom: 0;
+        }
+    }
+
+}

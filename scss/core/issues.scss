@@ -1,0 +1,114 @@
+.issues {
+    padding: 4em 0;
+
+    @media (min-width: 768px) {
+        padding: 11.8em 0 8.6em;
+    }
+
+    .section {
+        &__title {
+            @media (min-width: 768px) {
+                margin-bottom: 0.6em;
+            }
+        }
+
+        &__sub {}
+
+    }
+
+    &__list {
+        margin: 4em 0;
+
+        @media (min-width: 768px) {
+            margin: 5.5em 0 7.2em;
+        }
+    }
+
+    &__row {
+        // margin-bottom: 4em;
+        position: relative;
+
+        @media (min-width: 768px) {
+            display: flex;
+            min-height: 19.1em;
+            // margin-bottom: 0;
+
+            &:nth-child(even) {
+                .issues__text {
+                    order: -1;
+                }
+            }
+        }
+    }
+
+    &__img {
+        // padding-bottom: 53%;
+        // width: 100%;
+        background: $color_withe center no-repeat;
+        background-size: cover;
+
+        @media (min-width: 768px) {
+            // padding-bottom: 0;
+            width: 50%;
+            flex: none;
+        }
+
+        @media (max-width: 767px) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    &__text {
+        padding: 3em 2em;
+        color: $color_withe;
+        position: relative;
+        z-index: 1;
+
+        @media (min-width: 768px) {
+            padding: 4.1em 5em;
+        }
+
+        @media (max-width: 767px) {
+            background-color: rgba(#000, 0.3);
+        }
+
+        h3 {
+            font-size: 2.25em;
+            font-weight: 700;
+            margin: 0 0 1.1em;
+            position: relative;
+        }
+
+        p {
+            font-size: 1.75em;
+            line-height: 1.3;
+            font-weight: 300;
+            margin: 0;
+            position: relative;
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+        opacity: 0.74;
+        // background-color: #000;
+
+        @media (min-width: 768px) {
+            opacity: 1;
+        }
+    }
+
+    &__link {
+        text-align: center;
+    }
+
+}

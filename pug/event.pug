@@ -1,0 +1,32 @@
+extends layout.pug
+block variables
+    -var pageClass = "";
+
+block content
+    .post
+        .container_center
+            h1.post__title Event Name
+
+            .pageSlider
+                .pageSlider__full
+                    img(src="img/slider-full.jpg", alt="alt")
+                    img(src="img/slider-full.jpg", alt="alt")
+                    img(src="img/slider-full.jpg", alt="alt")
+                    img(src="img/slider-full.jpg", alt="alt")
+                    img(src="img/slider-full.jpg", alt="alt")
+                .pageSlider__thumbs
+                    img(src="img/slider-min-1.jpg", alt="alt")
+                    img(src="img/slider-min-2.jpg", alt="alt")
+                    img(src="img/slider-min-3.jpg", alt="alt")
+                    img(src="img/slider-min-4.jpg", alt="alt")
+                    img(src="img/slider-min-1.jpg", alt="alt")
+
+            .page__text
+                h4 Some subtitle here
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit id sit ipsum sit dui a, ultrices mauris. Quam nisi, id adipiscing amet purus vitae imperdiet velit porttitor. Ullamcorper nec semper et sed est interdum at nulla. Gravida ultrices pretium velit ipsum quis. Quam nisi, id adipiscing amet purus vitae imperdiet velit porttitor. Ullamcorper nec semper et sed est interdum at nulla. Gravida ultrices pretium velit ipsum quis. Gravida ultrices pretium velit ipsum quis. Quam nisi, id adipiscing amet purus vitae imperdiet velit porttitor. Gravida ultrices pretium velit ipsum quis. Quam nisi, id adipiscing amet purus.
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit id sit ipsum sit dui a, ultrices mauris. Quam nisi, id adipiscing amet purus vitae imperdiet velit porttitor. Ullamcorper nec semper et sed est interdum at nulla. Gravida ultrices pretium velit ipsum quis. Quam nisi, id adipiscing amet purus vitae imperdiet velit porttitor. Ullamcorper nec semper et sed est interdum at nulla. Gravida ultrices pretium velit ipsum quis. 
+
+                .post__date 12.09.2019
+
+
+    include articleList.pug

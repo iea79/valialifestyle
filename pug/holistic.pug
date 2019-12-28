@@ -1,0 +1,47 @@
+extends layout.pug
+block variables
+    -var pageClass = "";
+
+block content
+    .page
+        .page__top(style="background-image: url(img/holistic-bg.jpg)")
+            .container_center
+                h1.page__title Holistic Health Performance
+        .page__descr
+            .container_center
+                h2.page__descrTitle Take your doctors visit to the next level with our comprehensive examination
+                .page__descrSub We integrate data from advanced clinical labs for an exceptionally comprehensive understanding of yourself to achieve the next level of performance. 
+
+    // begin holistic
+    .holistic
+        .container_center
+            h2.section__title Holistic Medical Exam
+            .section__sub Experience Our Executive Level Evaluation
+
+            .holisticList
+                .holisticList__top History & Physical Examination
+                .holisticList__item
+                    .holisticList__name Holistic Lifestyle Assessment:
+                    .holisticList__sub Sleep, stress, strengths, nutrition, fitness & supplements
+                .holisticList__item
+                    .holisticList__name Fundamental labs:
+                    .holisticList__sub Liver + kidney, lipids, glucose, inflammation, thyroid, VitD, +
+                .holisticList__item
+                    .holisticList__name Advanced laboratory testing:
+                    .holisticList__sub Optimal Nutrition Evaluation, Gut Health & Food Sensitivities, Genomics, Hormones
+                .holisticList__item
+                    .holisticList__name Follow-up Appointments for Program Design:
+                    .holisticList__sub Diving into your custom lifestyle revamp with a personalized fitness, nutrition and supplement protocol
+                .holisticList__bottom Plus your complimentary Fitness Assessment with one of our private trainers
+
+    // end holistic
+
+    // begin insuranceAccepted
+    .insuranceAccepted
+        .section__title Health insurance accepted
+        .section__link
+            a.btn(href="#") Book Now
+
+    // end insuranceAccepted
+
+    include articleList.pug
